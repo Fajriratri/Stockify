@@ -13,6 +13,13 @@ class User extends Authenticatable
     use HasApiTokens, HasFactory, Notifiable;
 
     /**
+     * Menonaktifkan fitur timestamp otomatis (created_at dan updated_at).
+     *
+     * @var bool
+     */
+    public $timestamps = false; // <-- INI ADALAH PERBAIKANNYA
+
+    /**
      * The attributes that are mass assignable.
      *
      * @var array<int, string>
@@ -21,6 +28,7 @@ class User extends Authenticatable
         'name',
         'email',
         'password',
+        'role',
     ];
 
     /**
@@ -42,3 +50,4 @@ class User extends Authenticatable
         'email_verified_at' => 'datetime',
     ];
 }
+
